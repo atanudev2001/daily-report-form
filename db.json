@@ -55,6 +55,13 @@
       "assignedTask": "Working with the team in India on ai",
       "taskDetails": "Proceed to building the model",
       "id": 8
+    },
+    {
+      "employeeName": "Jonshon",
+      "taskDate": "2023-08-04T18:30:00.000Z",
+      "assignedTask": "Angular Project for bamf",
+      "taskDetails": "Working on the coding part ",
+      "id": 12
     }
   ]
 }

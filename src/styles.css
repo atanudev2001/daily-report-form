@@ -8,3 +8,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .edit-btn{background-color: green;color: #F5F4F4;border: none;border-radius: 5px;}
 .delete-btn{background-color: red;color:#F5F4F4;border: none;border-radius: 5px;}
+
+.mat-mdc-card-content{border-radius: 10px;
+  background: #F5F4F4;}
+.icon{position: absolute;
+  right: 0px;
+  top: 15px;}

@@ -15,7 +15,7 @@
       <td >{{employees.taskDate | date}}</td>
       <td >{{employees.assignedTask | titlecase}}</td>
       <td >{{employees.taskDetails | lowercase}}</td>
-      <td><button class="edit-btn " >Edit</button></td>
+      <td><button class="edit-btn " (click)="openeditdialog()">Edit</button></td>
       <td><button class="delete-btn" (click)="deletetask(employees)">Delete</button></td>
     </tr>
     <tr>
@@ -23,6 +23,7 @@
     </tr>
   </tbody>
 </table>
+
 
 <div class="text-center">
   <input type="button" class="btn btn-primary pull-right" (click)="back()" value="Go Back">

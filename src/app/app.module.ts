@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -17,13 +20,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core';
 import {FormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 import { ShowTaskComponent } from './show-task/show-task.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeFormComponent,
-    ShowTaskComponent
+    ShowTaskComponent,
+    EditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,10 @@ import { ShowTaskComponent } from './show-task/show-task.component';
     MatButtonModule,
     HttpClientModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

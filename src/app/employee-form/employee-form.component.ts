@@ -4,6 +4,7 @@ import { Employeetimesheet } from '../models/emp-ts';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
@@ -19,7 +20,7 @@ export class EmployeeFormComponent implements OnInit {
 
   constructor(private apiService:ApiService,private router: Router) {}
   ngOnInit(): void {
-    // this.getemployee()
+    this.getemployee()
   }
 
 
@@ -38,6 +39,7 @@ export class EmployeeFormComponent implements OnInit {
       this.getemployee();
     });
     this.router.navigate(['showtask']);
+
   }
 
 }

@@ -2,6 +2,8 @@ import { ApiService } from './../api.service';
 import { Component, OnInit } from '@angular/core';
 import { Employeetimesheet } from '../models/emp-ts';
 import { Location } from "@angular/common";
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-show-task',
@@ -10,11 +12,7 @@ import { Location } from "@angular/common";
 })
 export class ShowTaskComponent implements OnInit {
 
-  // location: any;
-
-
-
-constructor(private apiService:ApiService,private location: Location) {}
+constructor(private apiService:ApiService,private location: Location,private matDialog:MatDialog) {}
   ngOnInit(): void {
     this.getemployee()
   }
@@ -31,16 +29,14 @@ employees = new Employeetimesheet();
   deletetask(employees:Employeetimesheet){
     alert("Do you want to delete the task?")
     this.apiService.deleteassignment(employees).subscribe(data =>{
-      // console.log(data);
+      console.log(data);
       this.getemployee();
     });
   }
-  // edittask(employees:Employeetimesheet){
-  //   this.apiService.editassignment(employees).subscribe(data =>{
-  //     this.getemployee();
-  //   });
-  // }
 
+  openeditdialog(){
+    this.matDialog.open(EditDialogComponent)
+  }
   back(){
     this.location.back()
    }

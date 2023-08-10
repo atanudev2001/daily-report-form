@@ -27,6 +27,9 @@ export class ApiService {
     return this.http.delete<Employeetimesheet>(this.url+ 'employeetimesheet' +'/'+ employeetimesheet.id);
   }
 
-  editassignment(employeetimesheet:Employeetimesheet){
+  editassignment(employeetimesheet:Employeetimesheet):Observable<Employeetimesheet> {
+    const headers = { 'content-type': 'application/json'}
+    const data=JSON.stringify(employeetimesheet);
+    return this.http.put<Employeetimesheet>(this.url+ 'employeetimesheet', data,{'headers':headers});
   }
 }

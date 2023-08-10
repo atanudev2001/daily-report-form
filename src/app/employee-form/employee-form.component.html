@@ -4,9 +4,10 @@
         <div class="daily-task text-center mb-4">Daily Task</div>
         <form class="example-form" >
 
-          <mat-form-field  class="full-width" >
+          <mat-form-field  class="full-width position-relative" >
             <mat-label>Employee Name</mat-label>
-            <input matInput name="employeename" [(ngModel)]="employees.employeeName">
+            <input matInput name="employeename" class="form-control" [(ngModel)]="employees.employeeName" required="required">
+            <div class="icon"><mat-icon aria-hidden="false" aria-label="employee-name" fontIcon="person" ></mat-icon></div>
           </mat-form-field>
 
           <mat-form-field class="full-width">
@@ -31,7 +32,7 @@
     </mat-card-content>
   </mat-card>
 </div>
-
+<!-- <mat-spinner></mat-spinner> -->
 
 
 
