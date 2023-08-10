@@ -1,0 +1,29 @@
+
+<table class='table mt-4'>
+  <thead>
+    <tr>
+      <th >Name</th>
+      <th >Date</th>
+      <th >Assigned Task</th>
+      <th >Task Details</th>
+      <th colspan="2" >Action</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let employees of employee;">
+      <td >{{employees.employeeName | titlecase}}</td>
+      <td >{{employees.taskDate | date}}</td>
+      <td >{{employees.assignedTask | titlecase}}</td>
+      <td >{{employees.taskDetails | lowercase}}</td>
+      <td><button class="edit-btn " >Edit</button></td>
+      <td><button class="delete-btn" (click)="deletetask(employees)">Delete</button></td>
+    </tr>
+    <tr>
+      <td *ngIf="employee?.length == 0" colspan="5">No Task Found</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text-center">
+  <input type="button" class="btn btn-primary pull-right" (click)="back()" value="Go Back">
+</div>

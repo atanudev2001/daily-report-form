@@ -1,0 +1,41 @@
+<div class="form-content ">
+  <mat-card class="w-75">
+    <mat-card-content >
+        <div class="daily-task text-center mb-4">Daily Task</div>
+        <form class="example-form" >
+
+          <mat-form-field  class="full-width" >
+            <mat-label>Employee Name</mat-label>
+            <input matInput name="employeename" [(ngModel)]="employees.employeeName">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" name="currentdate" [(ngModel)]="employees.taskDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Assigned Task</mat-label>
+            <textarea matInput  placeholder="Ex. Write the task that is given..." name="assignedtask"  [(ngModel)]="employees.assignedTask"></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Task Details</mat-label>
+            <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" [(ngModel)]="employees.taskDetails"></textarea>
+          </mat-form-field>
+          <div class="text-center"><button mat-raised-button  class="submit-btn" (click)="detailsadd()">Submit</button></div>
+        </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+

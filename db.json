@@ -1,0 +1,60 @@
+{
+  "employeetimesheet": [
+    {
+      "employeeName": "Jack Reyan",
+      "taskDate": "2023-08-04T18:30:00.000Z",
+      "assignedTask": "Web Development",
+      "taskDetails": "Completed",
+      "id": 1
+    },
+    {
+      "employeeName": "Sneha",
+      "taskDate": "2023-07-31T18:30:00.000Z",
+      "assignedTask": "Angular Forms",
+      "taskDetails": "wireframing done",
+      "id": 2
+    },
+    {
+      "employeeName": "Atanu ",
+      "taskDate": "2023-08-01T18:30:00.000Z",
+      "assignedTask": "Angular Tutorial on curd and validators",
+      "taskDetails": "Working on the edit part and the validators",
+      "id": 3
+    },
+    {
+      "employeeName": "Mia",
+      "taskDate": "2023-08-06T18:30:00.000Z",
+      "assignedTask": "Wireframing of Delightful Website",
+      "taskDetails": "Footer left to be done.",
+      "id": 4
+    },
+    {
+      "employeeName": "Jonshon",
+      "taskDate": "2023-08-02T18:30:00.000Z",
+      "assignedTask": "To make a software for the new company at Berlin",
+      "taskDetails": "Mind Map is Done",
+      "id": 5
+    },
+    {
+      "employeeName": "Jonshon",
+      "taskDate": "2023-08-02T18:30:00.000Z",
+      "assignedTask": "To make a software for the new company at Berlin",
+      "taskDetails": "Mind Map is Done",
+      "id": 6
+    },
+    {
+      "employeeName": "Jonshon",
+      "taskDate": "2023-07-31T18:30:00.000Z",
+      "assignedTask": "Software for the new company at Berlin",
+      "taskDetails": "Mind Map is done",
+      "id": 7
+    },
+    {
+      "employeeName": "Humpy",
+      "taskDate": "2023-08-04T18:30:00.000Z",
+      "assignedTask": "Working with the team in India on ai",
+      "taskDetails": "Proceed to building the model",
+      "id": 8
+    }
+  ]
+}
