@@ -2,32 +2,38 @@
   <mat-card class="w-75">
     <mat-card-content >
         <div class="daily-task text-center mb-4">Daily Task</div>
-        <form class="example-form" >
+        <form class="example-form" #empform="ngForm" (ngSubmit)="detailsadd()">
 
           <mat-form-field  class="full-width position-relative" >
             <mat-label>Employee Name</mat-label>
-            <input matInput name="employeename" class="form-control" [(ngModel)]="employees.employeeName" required="required">
+            <input matInput name="employeename" class="form-control" #name="ngModel"  [(ngModel)]="employees!.employeeName" [value]="employees.employeeName" required>
+            <div class="error" *ngIf="name.touched && name.invalid">Name cannot be empty</div>
             <div class="icon"><mat-icon aria-hidden="false" aria-label="employee-name" fontIcon="person" ></mat-icon></div>
           </mat-form-field>
 
           <mat-form-field class="full-width">
             <mat-label>Date</mat-label>
-            <input matInput [matDatepicker]="picker" name="currentdate" [(ngModel)]="employees.taskDate">
+            <input matInput [matDatepicker]="picker" name="currentdate" #date="ngModel"  [(ngModel)]="employees!.taskDate" required>
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            <div class="error" *ngIf="date.touched && date.invalid">Date cannot be empty</div>
           </mat-form-field>
 
           <mat-form-field class="full-width">
             <mat-label>Assigned Task</mat-label>
-            <textarea matInput  placeholder="Ex. Write the task that is given..." name="assignedtask"  [(ngModel)]="employees.assignedTask"></textarea>
+            <textarea matInput  placeholder="Ex. Write the task that is given..." name="assignedtask"  [(ngModel)]="employees!.assignedTask"></textarea>
           </mat-form-field>
 
           <mat-form-field class="full-width">
             <mat-label>Task Details</mat-label>
-            <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" [(ngModel)]="employees.taskDetails"></textarea>
+            <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" [(ngModel)]="employees!.taskDetails"></textarea>
           </mat-form-field>
-          <div class="text-center"><button mat-raised-button  class="submit-btn" (click)="detailsadd()">Submit</button></div>
+          <div class="text-center">
+            <button mat-raised-button  class="submit-btn" [disabled]="empform.invalid" type="submit">Submit</button>
+
+            <!-- <button mat-raised-button class="cancel-btn" type="button" (click)="cancel()">Cancel</button> -->
+          </div>
         </form>
     </mat-card-content>
   </mat-card>

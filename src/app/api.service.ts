@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class ApiService {
   url = 'http://localhost:3000/';
 
-
   constructor(private http: HttpClient) { }
 
   getEmployees():Observable<Employeetimesheet[]> {
@@ -27,9 +26,13 @@ export class ApiService {
     return this.http.delete<Employeetimesheet>(this.url+ 'employeetimesheet' +'/'+ employeetimesheet.id);
   }
 
+  getdata(employeetimesheet:Employeetimesheet):Observable<Employeetimesheet>{
+    return this.http.get<Employeetimesheet>(this.url + 'employeetimesheet' +'/'+ employeetimesheet.id);
+  }
+
   editassignment(employeetimesheet:Employeetimesheet):Observable<Employeetimesheet> {
     const headers = { 'content-type': 'application/json'}
     const data=JSON.stringify(employeetimesheet);
-    return this.http.put<Employeetimesheet>(this.url+ 'employeetimesheet', data,{'headers':headers});
+    return this.http.put<Employeetimesheet>(this.url+ 'employeetimesheet'+'/'+employeetimesheet.id, data,{'headers':headers});
   }
 }

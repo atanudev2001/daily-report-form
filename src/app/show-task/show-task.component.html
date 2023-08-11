@@ -1,4 +1,3 @@
-
 <table class='table mt-4'>
   <thead>
     <tr>
@@ -15,7 +14,7 @@
       <td >{{employees.taskDate | date}}</td>
       <td >{{employees.assignedTask | titlecase}}</td>
       <td >{{employees.taskDetails | lowercase}}</td>
-      <td><button class="edit-btn " (click)="openeditdialog()">Edit</button></td>
+      <td><button class="edit-btn " (click)="openeditdialog(employees)">Edit</button></td>
       <td><button class="delete-btn" (click)="deletetask(employees)">Delete</button></td>
     </tr>
     <tr>

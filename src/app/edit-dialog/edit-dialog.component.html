@@ -5,13 +5,13 @@
 
       <mat-form-field  class="full-width position-relative" >
         <mat-label>Employee Name</mat-label>
-        <input matInput name="employeename" class="form-control" [(ngModel)]="employees.employeeName">
+        <input matInput name="employeename" class="form-control" [(ngModel)]="employees!.employeeName">
         <div class="icon"><mat-icon aria-hidden="false" aria-label="employee-name" fontIcon="person" ></mat-icon></div>
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" name="currentdate" >
+        <input matInput [matDatepicker]="picker" name="currentdate"   [(ngModel)]="employees!.taskDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -19,16 +19,16 @@
 
       <mat-form-field class="full-width">
         <mat-label>Assigned Task</mat-label>
-        <textarea matInput  placeholder="Ex. Write the task that is given..." name="assignedtask"  ></textarea>
+        <textarea matInput  placeholder="Ex. Write the task that is given..." name="assignedtask"  [(ngModel)]="employees!.assignedTask"></textarea>
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <mat-label>Task Details</mat-label>
-        <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails"></textarea>
+        <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" [(ngModel)]="employees!.taskDetails"></textarea>
       </mat-form-field>
       <div class="text-center">
         <button mat-raised-button  class="submit-btn " style="margin-right: 10px;" (click)="savetask(employees)">Save</button>
-        <button mat-raised-button color="warn">Cancel</button>
+        <button mat-raised-button color="warn" (click)="canceldialog()">Cancel</button>
       </div>
     </form>
   </mat-card-content>
