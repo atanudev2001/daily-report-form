@@ -1,25 +1,18 @@
 {
   "employeetimesheet": [
     {
-      "employeeName": "Sneha",
-      "taskDate": "2023-07-31T18:30:00.000Z",
-      "assignedTask": "Angular Forms",
-      "taskDetails": "wireframing done",
-      "id": 2
-    },
-    {
-      "employeeName": "Atanu ",
+      "id": 3,
+      "employeeName": "Atanu Sarkar",
       "taskDate": "2023-08-01T18:30:00.000Z",
       "assignedTask": "Angular Tutorial on curd and validators",
-      "taskDetails": "Working on the edit part and the validators",
-      "id": 3
+      "taskDetails": "Working on the edit part and the validators"
     },
     {
-      "employeeName": "Mia",
+      "id": 4,
+      "employeeName": "Mia hjk",
       "taskDate": "2023-08-06T18:30:00.000Z",
       "assignedTask": "Wireframing of Delightful Website",
-      "taskDetails": "Footer left to be done.",
-      "id": 4
+      "taskDetails": "Footer left to be done."
     },
     {
       "employeeName": "Jonshon",
@@ -29,20 +22,6 @@
       "id": 5
     },
     {
-      "employeeName": "Jonshon",
-      "taskDate": "2023-07-31T18:30:00.000Z",
-      "assignedTask": "Software for the new company at Berlin",
-      "taskDetails": "Mind Map is done",
-      "id": 7
-    },
-    {
-      "employeeName": "Jonshon",
-      "taskDate": "2023-08-04T18:30:00.000Z",
-      "assignedTask": "Angular Project for bamf",
-      "taskDetails": "Working on the coding part ",
-      "id": 12
-    },
-    {
       "employeeName": "Rahul",
       "taskDate": "2023-06-30T18:30:00.000Z",
       "assignedTask": "To solve the bug in the website",
@@ -50,38 +29,17 @@
       "id": 13
     },
     {
-      "employeeName": "Rahul",
-      "taskDate": "2023-08-03T18:30:00.000Z",
-      "assignedTask": "Hello World in Java",
-      "taskDetails": "completed",
-      "id": 14
-    },
-    {
-      "employeeName": "Rahul",
-      "taskDate": "2023-08-01T18:30:00.000Z",
-      "assignedTask": "Something",
-      "taskDetails": "Working on it",
-      "id": 15
-    },
-    {
-      "employeeName": "Sneha",
-      "taskDate": "2023-08-10T18:30:00.000Z",
-      "assignedTask": "Spring Boot",
-      "taskDetails": "Processing",
-      "id": 18
+      "id": 21,
+      "employeeName": "abcdfjl",
+      "taskDate": "2023-08-02T18:30:00.000Z",
+      "assignedTask": "adadsadsa",
+      "taskDetails": "sadads"
     },
     {
       "employeeName": "Rahul",
       "taskDate": "2023-08-04T18:30:00.000Z",
-      "assignedTask": "dsdlhsalk",
-      "taskDetails": "ldhlashdl",
-      "id": 21
-    },
-    {
-      "employeeName": "Atanu ",
-      "taskDate": "2023-07-31T18:30:00.000Z",
-      "assignedTask": "Angular",
-      "taskDetails": "Completed",
+      "assignedTask": "ssad",
+      "taskDetails": "dasdas",
       "id": 22
     }
   ]

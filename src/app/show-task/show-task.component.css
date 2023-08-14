@@ -1,0 +1,17 @@
+.full-table{max-width: 1300px;margin: 50px auto;}
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+/* .mat-sort-header-content{text-align: center;} */
+
+td, th {
+  width: 22%;
+  /* text-align: center; */
+}
+/* td:last-child{width: 22%;} */
+.heading{text-align: center;font-size: 30px;margin-bottom: 50px;}
