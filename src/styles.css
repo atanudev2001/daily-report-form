@@ -13,4 +13,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: #F5F4F4;}
 .icon{position: absolute;
   right: 0px;
-  top: 15px;}
+  top: 28px;}
+
+.submit-btn:disabled{cursor: not-allowed !important;background: #cde0f9 !important;}

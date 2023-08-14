@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Employeetimesheet } from '../models/emp-ts';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
@@ -13,14 +11,17 @@ import { Router } from '@angular/router';
 })
 export class EmployeeFormComponent implements OnInit {
 
-  employee:Employeetimesheet[] | undefined;
-  employees = new Employeetimesheet();
+  employee: Employeetimesheet[];
+  employees: Employeetimesheet;
 
 
+  constructor(private apiService:ApiService,private router: Router) {
+    this.employees = new Employeetimesheet();
+    this.employee = [];
 
-  constructor(private apiService:ApiService,private router: Router) {}
+  }
   ngOnInit(): void {
-    this.getemployee()
+    this.getemployee();
   }
 
 

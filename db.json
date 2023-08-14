@@ -1,13 +1,6 @@
 {
   "employeetimesheet": [
     {
-      "employeeName": "Jack Reyan",
-      "taskDate": "2023-08-04T18:30:00.000Z",
-      "assignedTask": "Web Development",
-      "taskDetails": "Completed",
-      "id": 1
-    },
-    {
       "employeeName": "Sneha",
       "taskDate": "2023-07-31T18:30:00.000Z",
       "assignedTask": "Angular Forms",
@@ -37,24 +30,10 @@
     },
     {
       "employeeName": "Jonshon",
-      "taskDate": "2023-08-02T18:30:00.000Z",
-      "assignedTask": "To make a software for the new company at Berlin",
-      "taskDetails": "Mind Map is Done",
-      "id": 6
-    },
-    {
-      "employeeName": "Jonshon",
       "taskDate": "2023-07-31T18:30:00.000Z",
       "assignedTask": "Software for the new company at Berlin",
       "taskDetails": "Mind Map is done",
       "id": 7
-    },
-    {
-      "employeeName": "Humpy",
-      "taskDate": "2023-08-04T18:30:00.000Z",
-      "assignedTask": "Working with the team in India on ai",
-      "taskDetails": "Proceed to building the model",
-      "id": 8
     },
     {
       "employeeName": "Jonshon",
@@ -62,6 +41,48 @@
       "assignedTask": "Angular Project for bamf",
       "taskDetails": "Working on the coding part ",
       "id": 12
+    },
+    {
+      "employeeName": "Rahul",
+      "taskDate": "2023-06-30T18:30:00.000Z",
+      "assignedTask": "To solve the bug in the website",
+      "taskDetails": "Studying the tools to do it",
+      "id": 13
+    },
+    {
+      "employeeName": "Rahul",
+      "taskDate": "2023-08-03T18:30:00.000Z",
+      "assignedTask": "Hello World in Java",
+      "taskDetails": "completed",
+      "id": 14
+    },
+    {
+      "employeeName": "Rahul",
+      "taskDate": "2023-08-01T18:30:00.000Z",
+      "assignedTask": "Something",
+      "taskDetails": "Working on it",
+      "id": 15
+    },
+    {
+      "employeeName": "Sneha",
+      "taskDate": "2023-08-10T18:30:00.000Z",
+      "assignedTask": "Spring Boot",
+      "taskDetails": "Processing",
+      "id": 18
+    },
+    {
+      "employeeName": "Rahul",
+      "taskDate": "2023-08-04T18:30:00.000Z",
+      "assignedTask": "dsdlhsalk",
+      "taskDetails": "ldhlashdl",
+      "id": 21
+    },
+    {
+      "employeeName": "Atanu ",
+      "taskDate": "2023-07-31T18:30:00.000Z",
+      "assignedTask": "Angular",
+      "taskDetails": "Completed",
+      "id": 22
     }
   ]
 }

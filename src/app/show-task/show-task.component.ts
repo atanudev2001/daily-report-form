@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Employeetimesheet } from '../models/emp-ts';
 import { Location } from "@angular/common";
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { EmployeeFormComponent } from '../employee-form/employee-form.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -11,14 +12,16 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./show-task.component.css']
 })
 export class ShowTaskComponent implements OnInit {
-
-constructor(private apiService:ApiService,private location: Location,private matDialog:MatDialog) {}
+  employee: Employeetimesheet[];
+  employees: Employeetimesheet;
+constructor(private apiService:ApiService,private location: Location,private matDialog:MatDialog) {
+  this.employees = new Employeetimesheet();
+  this.employee = [];
+}
   ngOnInit(): void {
     this.getemployee()
   }
 
-employee:Employeetimesheet[] | undefined;
-employees = new Employeetimesheet();
   getemployee(){
     this.apiService.getEmployees()
     .subscribe((data: any)   => {
@@ -27,15 +30,24 @@ employees = new Employeetimesheet();
   });
   }
   deletetask(employees:Employeetimesheet){
-    alert("Do you want to delete the task?")
-    this.apiService.deleteassignment(employees).subscribe(data =>{
-      console.log(data);
-      this.getemployee();
-    });
+    if(confirm('Are you sure you want to delete?')){
+      this.apiService.deleteassignment(employees).subscribe(data =>{
+        // console.log(employees.id);
+        this.getemployee();
+      });
+    }
   }
 
-  openeditdialog(){
-    this.matDialog.open(EditDialogComponent)
+  openeditdialog(employees:Employeetimesheet){
+    this.matDialog.open(EmployeeFormComponent,{
+      width: '500px',
+      height: '500px',
+    });
+    this.apiService.getdata(employees).subscribe(data =>{
+      console.log(data);
+      // this.getemployee();
+    });
+
   }
   back(){
     this.location.back()
