@@ -1,14 +1,12 @@
 <div class="form-content ">
   <mat-card class="w-75">
     <mat-card-content >
-        <div class="daily-task text-center mb-4" >Daily Task</div>
-        <!-- <div class="daily-task text-center mb-4" *ngIf="addemp">Edit Task</div> -->
+        <div class="daily-task text-center mb-4" >{{data?'Edit Task':'Daily Task'}}</div>
         <form class="example-form" [formGroup]="taskform" (ngSubmit)="detailsadd()">
 
           <mat-form-field  class="full-width position-relative" >
             <mat-label>Employee Name</mat-label>
             <input matInput name="employeename" class="form-control"   formControlName="employeeName"  required>
-            <!-- <div class="error" *ngIf="name.touched && name.invalid">Name cannot be empty</div> -->
             <div class="icon"><mat-icon aria-hidden="false" aria-label="employee-name" fontIcon="person" ></mat-icon></div>
           </mat-form-field>
 
@@ -18,7 +16,6 @@
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-            <!-- <div class="error" *ngIf="date.touched && date.invalid">Date cannot be empty</div> -->
           </mat-form-field>
 
           <mat-form-field class="full-width">
@@ -31,14 +28,14 @@
             <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" formControlName="taskDetails"></textarea>
           </mat-form-field>
           <div class="text-center">
-            <button mat-raised-button  class="submit-btn"  type="submit">Submit</button>
-            <button mat-raised-button class="cancel-btn" type="button" (click)="cancel()">Cancel</button>
+            <button mat-raised-button  class="submit-btn"  type="submit">{{data? 'save':'submit'}}</button>
+            <button mat-raised-button class="cancel-btn" type="button" *ngIf="data" (click)="cancel()">Cancel</button>
           </div>
         </form>
     </mat-card-content>
   </mat-card>
 </div>
-<!-- <mat-spinner></mat-spinner> -->
+
 
 
 

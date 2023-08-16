@@ -1,31 +1,35 @@
 import { ApiService } from './../api.service';
 import { Component,  OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Employeetimesheet } from '../models/emp-ts';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+
 
 
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
-  styleUrls: ['./employee-form.component.css'],
+  styleUrls: ['./employee-form.component.css']
 })
+// @Injectable ({ providedIn:'root' })
 export class EmployeeFormComponent implements OnInit {
   employee: Employeetimesheet[];
   employees: Employeetimesheet;
 
   editdata: any;
-
-
+  finaldata: any;
+  // private _paginator: any;
 
   constructor(
     private builder: FormBuilder,
     private apiService: ApiService,
+    private route: ActivatedRoute,
     private router: Router,
-    private dialog: MatDialog,
+    public dialog:MatDialog,
+    // private _dialogref:MatDialogRef<EmployeeFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {
+    ) {
     this.employees = new Employeetimesheet();
     this.employee = [];
   }
@@ -38,7 +42,10 @@ export class EmployeeFormComponent implements OnInit {
     taskDetails: this.builder.control('', Validators.required),
   });
 
+
+
   ngOnInit(): void {
+    this.getemployee();
     if (this.data.id != '' && this.data.id != null) {
       this.apiService.getdata(this.data.id).subscribe((res) => {
         this.editdata = res;
@@ -52,30 +59,68 @@ export class EmployeeFormComponent implements OnInit {
       });
     }
   }
+  getemployee(){
+    this.apiService.getEmployees()
+    .subscribe((data: any)   => {
+      // console.log(data);
+      this.employee=data;
+      // this.finaldata = new MatTableDataSource<Employeetimesheet>(this.employee);
+    });
+  }
 
-  detailsadd() {
+  create(){
     if (this.taskform.valid) {
-      const editid = this.taskform.getRawValue().id;
-      if (editid != '' && editid != null) {
-        this.apiService.editassignment(editid,this.taskform.getRawValue()).subscribe(res => {
-          alert('Updated Successfully');
-          this.dialog.closeAll();
-        });
-      }
-      else{
-        this.apiService.addtask(this.taskform.value).subscribe((data) => {
-          alert('Task added successfully');
-        });
-        this.router.navigate(['showtask']);
-      }
-
+      this.apiService.addtask(this.taskform.value).subscribe((data) => {
+        alert('Task added successfully');
+      });
+      this.router.navigate(['showtask']);
     }
     else {
       alert('Form not valid');
     }
   }
 
+  detailsadd() {
+    const editid = this.taskform.getRawValue().id;
+    if( editid != '' && editid != null) {
+      this.apiService.editassignment(editid,this.taskform.getRawValue()).subscribe(res => {
+        alert('Updated Successfully');
+        this.getemployee();
+        this.dialog.closeAll();
+
+      });
+    }
+    else {
+      this.create();
+    }
+
+  }
+
+
+  // detailsadd() {
+  //   if (this.taskform.valid) {
+  //     const editid = this.taskform.getRawValue().id;
+  //     if (editid != '' && editid != null) {
+  //       this.apiService.editassignment(editid,this.taskform.getRawValue()).subscribe(res => {
+  //         alert('Updated Successfully');
+  //         this.dialog.closeAll();
+  //       });
+  //     }
+  //     else{
+  //       this.apiService.addtask(this.taskform.value).subscribe((data) => {
+  //         alert('Task added successfully');
+  //       });
+  //       this.router.navigate(['showtask']);
+  //     }
+
+  //   }
+  //   else {
+  //     alert('Form not valid');
+  //   }
+  // }
+
   cancel(){
     this.dialog.closeAll();
+    // localStorage.removeItem('data');
   }
 }

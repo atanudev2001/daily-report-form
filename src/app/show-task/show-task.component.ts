@@ -3,11 +3,10 @@ import { Component, OnInit,AfterViewInit,ViewChild, Inject } from '@angular/core
 import { Employeetimesheet } from '../models/emp-ts';
 import { Location } from "@angular/common";
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog,MatDialogRef } from '@angular/material/dialog';
 import {MatPaginator } from '@angular/material/paginator';
 import {MatTableDataSource } from '@angular/material/table';
 
-// import * as alertify from 'alertifyjs'
 
 
 @Component({
@@ -25,18 +24,21 @@ export class ShowTaskComponent implements OnInit {
 
   employee: Employeetimesheet[];
   employees: Employeetimesheet;
+  // editdata: any;
+  // taskform: any;
+
 
 
 constructor(
   private apiService:ApiService,
   private location: Location,
   private matDialog:MatDialog,
-
   ) {
   this.employees = new Employeetimesheet();
   this.employee = [];
 
 }
+
 
   ngOnInit(): void {
     this.getemployee()
@@ -48,7 +50,7 @@ constructor(
     this.finaldata.filter = filterValue.trim().toLowerCase();
 
     if (this.finaldata._paginator) {
-      this.finaldata.r.firstPage();
+      this.finaldata.r;
     }
   }
 
@@ -73,15 +75,30 @@ constructor(
   }
 
 
-  openeditdialog(id:any){
-    this.matDialog.open(EmployeeFormComponent,{
+
+    //1. Fetch the data from API using the id;
+    //2. Save the data in the local storage
+    //3. Read the data from local storage on init, when you open the shared component, by implementing that there not in this component.
+
+
+  openeditdialog(id:number) {
+
+    const dialogRef = this.matDialog.open(EmployeeFormComponent,{
       width:'700px',
       enterAnimationDuration:'1000ms',
       exitAnimationDuration:'100ms',
       data:{id:id}
     });
 
+    dialogRef.afterClosed().subscribe({
+      next: val => {
+        if(val){
+          this.getemployee();
+        }
+      }
+    });
   }
+
   back(){
     this.location.back()
    }
