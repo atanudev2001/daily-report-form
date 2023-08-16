@@ -3,7 +3,7 @@ import { Component, OnInit,AfterViewInit,ViewChild, Inject } from '@angular/core
 import { Employeetimesheet } from '../models/emp-ts';
 import { Location } from "@angular/common";
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
-import { MAT_DIALOG_DATA, MatDialog,MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import {MatPaginator } from '@angular/material/paginator';
 import {MatTableDataSource } from '@angular/material/table';
 

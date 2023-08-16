@@ -58,7 +58,9 @@ import { ShowTaskComponent } from './show-task/show-task.component';
     MatPaginatorModule,
     MatSortModule
   ],
-  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} }],
+  providers: [{ provide: MAT_DIALOG_DATA, useValue: {} },
+    {provide: MatDialogRef,useValue: {}},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

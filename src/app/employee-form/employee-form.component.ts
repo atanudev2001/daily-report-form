@@ -24,10 +24,10 @@ export class EmployeeFormComponent implements OnInit {
   constructor(
     private builder: FormBuilder,
     private apiService: ApiService,
-    private route: ActivatedRoute,
+    // private route: ActivatedRoute,
     private router: Router,
-    public dialog:MatDialog,
-    // private _dialogref:MatDialogRef<EmployeeFormComponent>,
+    // public dialog:MatDialog,
+    public dialog:MatDialogRef<EmployeeFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
     ) {
     this.employees = new Employeetimesheet();
@@ -45,7 +45,7 @@ export class EmployeeFormComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getemployee();
+    // this.getemployee();
     if (this.data.id != '' && this.data.id != null) {
       this.apiService.getdata(this.data.id).subscribe((res) => {
         this.editdata = res;
@@ -59,14 +59,7 @@ export class EmployeeFormComponent implements OnInit {
       });
     }
   }
-  getemployee(){
-    this.apiService.getEmployees()
-    .subscribe((data: any)   => {
-      // console.log(data);
-      this.employee=data;
-      // this.finaldata = new MatTableDataSource<Employeetimesheet>(this.employee);
-    });
-  }
+
 
   create(){
     if (this.taskform.valid) {
@@ -85,8 +78,7 @@ export class EmployeeFormComponent implements OnInit {
     if( editid != '' && editid != null) {
       this.apiService.editassignment(editid,this.taskform.getRawValue()).subscribe(res => {
         alert('Updated Successfully');
-        this.getemployee();
-        this.dialog.closeAll();
+        this.dialog.close(true);
 
       });
     }
@@ -120,7 +112,7 @@ export class EmployeeFormComponent implements OnInit {
   // }
 
   cancel(){
-    this.dialog.closeAll();
+    this.dialog.close();
     // localStorage.removeItem('data');
   }
 }
