@@ -43,7 +43,6 @@ export class EmployeeFormComponent implements OnInit {
   });
 
 
-
   ngOnInit(): void {
     // this.getemployee();
     if (this.data.id != '' && this.data.id != null) {

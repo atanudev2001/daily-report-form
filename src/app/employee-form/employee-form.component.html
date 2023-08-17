@@ -1,7 +1,8 @@
 <div class="form-content ">
   <mat-card class="w-75">
     <mat-card-content >
-        <div class="daily-task text-center mb-4" >Daily Task</div>
+        <div class="daily-task text-center mb-4" >{{data.id?'Edit Task':'Daily Task'}}</div>
+        <!-- <div class="daily-task text-center mb-4" >Edit Task</div> -->
         <form class="example-form" [formGroup]="taskform" (ngSubmit)="detailsadd()">
 
           <mat-form-field  class="full-width position-relative" >
@@ -28,8 +29,8 @@
             <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" formControlName="taskDetails"></textarea>
           </mat-form-field>
           <div class="text-center">
-            <button mat-raised-button  class="submit-btn"  type="submit">Submit</button>
-            <button mat-raised-button class="cancel-btn" type="button" *ngIf="data" (click)="cancel()">Cancel</button>
+            <button mat-raised-button  class="submit-btn"  type="submit">{{data.id?'Save':'Submit'}}</button>
+            <button mat-raised-button style="margin-left: 10px;" type="button" *ngIf="data.id" (click)="cancel()">Cancel</button>
           </div>
         </form>
     </mat-card-content>
