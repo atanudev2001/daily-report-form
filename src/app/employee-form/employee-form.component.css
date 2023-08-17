@@ -33,6 +33,6 @@ border-bottom-right-radius: 10px;
 }
 
 @media only screen and (max-width:600px){
-  .daily-task{width: 60%;font-size: 30px;}
+  .daily-task{width: 60%;font-size: 20px;}
   .form-content{height: 700px !important;}
 }
