@@ -1,0 +1,46 @@
+<div class="form-content ">
+  <mat-card class="w-75">
+    <mat-card-content >
+        <div class="daily-task text-center mb-4" >Daily Task</div>
+        <!-- {{data.id?'Edit Task':'Daily Task'}}-->
+        <form class="example-form" [formGroup]="taskform" (ngSubmit)="detailsadd()">
+
+          <mat-form-field  class="full-width position-relative" >
+            <mat-label>Employee Name</mat-label>
+            <input matInput name="employeename" class="form-control"   formControlName="employeeName"  required>
+            <div class="icon"><mat-icon aria-hidden="false" aria-label="employee-name" fontIcon="person" ></mat-icon></div>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" name="currentdate"  formControlName="taskDate"  required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Assigned Task</mat-label>
+            <textarea matInput  placeholder="Ex. Write the task that is given..." name="assignedtask" formControlName="assignedTask" ></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Task Details</mat-label>
+            <textarea matInput placeholder="Ex. Completed, Pending etc..." name="taskdetails" formControlName="taskDetails"></textarea>
+          </mat-form-field>
+          <div class="text-center">
+            <button mat-raised-button  class="submit-btn"  type="submit">Submit</button>
+            <button mat-raised-button style="margin-left: 10px;" type="button"  (click)="cancel()">Cancel</button>
+          </div>
+        </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- {{data.id?'Save':'Submit'}}  *ngIf="data.id"-->
+
+
+
+
+
+

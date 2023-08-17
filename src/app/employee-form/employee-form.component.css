@@ -1,0 +1,38 @@
+.form-content{
+  /* background-color: #F5F4F4; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.daily-task{
+  width: 80%;
+  max-width: 450px;
+height: 77px;
+/* flex-shrink: 0; */
+background: #CCCECE;
+color: #884747;
+font-family: Kameron;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 8.88px;
+margin: -15px auto 0;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media only screen and (max-width:600px){
+  .daily-task{width: 60%;font-size: 20px;}
+  .form-content{height: 700px !important;}
+}

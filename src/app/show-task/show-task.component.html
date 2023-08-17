@@ -1,0 +1,118 @@
+<div class="full-table">
+  <div class="d-flex justify-content-between">
+    <div class="heading">Task Details</div>
+    <div class="text-center">
+      <input
+        type="button"
+        class="btn btn-primary pull-right"
+        (click)="back()"
+        value="Go Back"
+      />
+    </div>
+  </div>
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. rahul"
+      #input
+    />
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="finaldata">
+      <ng-container matColumnDef="employeeName">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let employees">
+          {{ employees.employeeName }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="taskDate">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let employees">
+          {{ employees.taskDate | date }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="assignedTask">
+        <th mat-header-cell *matHeaderCellDef>Assigned Date</th>
+        <td mat-cell *matCellDef="let employees">
+          {{ employees.assignedTask }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="taskDetails">
+        <th mat-header-cell *matHeaderCellDef>Task Details</th>
+        <td mat-cell *matCellDef="let employees">
+          {{ employees.taskDetails }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef colspan="2">Action</th>
+        <td mat-cell *matCellDef="let employees">
+          <div>
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="editdata(employees)"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              color="warn"
+              (click)="deletetask(employees)"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let employees; columns: displayedColumns"
+      ></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+</div>
+
+<!-- <table class='table mt-4'>
+  <thead>
+    <tr>
+      <th >Name</th>
+      <th >Date</th>
+      <th >Assigned Task</th>
+      <th >Task Details</th>
+      <th colspan="2" >Action</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="let employees;">
+      <td >{{employees.employeeName | titlecase}}</td>
+      <td >{{employees.taskDate | date}}</td>
+      <td >{{employees.assignedTask | titlecase}}</td>
+      <td >{{employees.taskDetails | lowercase}}</td>
+      <td><button class="edit-btn " (click)="openeditdialog(employees)">Edit</button></td>
+      <td><button class="delete-btn" (click)="deletetask(employees)">Delete</button></td>
+    </tr>
+    <tr>
+      <td *ngIf="employee?.length == 0" colspan="5">No Task Found</td>
+    </tr>
+  </tbody>
+</table> -->

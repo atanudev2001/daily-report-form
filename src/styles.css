@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/default.min.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.full-width{width: 100%;}
+.table th,.table td{text-align: center;}
+.submit-btn{background-color: #2574D2 !important;color: #ffff !important;}
+
+.edit-btn{background-color: green;color: #F5F4F4;border: none;border-radius: 5px;}
+.delete-btn{background-color: red;color:#F5F4F4;border: none;border-radius: 5px;}
+
+.mat-mdc-card-content{border-radius: 10px;
+  background: #F5F4F4;}
+.icon{position: absolute;
+  right: 0px;
+  top: 28px;}
+
+.submit-btn:disabled{cursor: not-allowed !important;background: #cde0f9 !important;}
